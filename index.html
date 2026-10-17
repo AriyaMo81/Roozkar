@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="یک فهرست ساده برای برنامه‌ریزی کارهای روزانه"
+      content="A simple Persian RTL to-do list app for daily planning."
     />
     <title>کارهای من</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +30,6 @@
             <h2 id="todo-heading">فهرست کارها</h2>
             <p class="date-label">امروز، یک روز تازه برای شروع است</p>
           </div>
-          <span class="task-count" aria-label="۳ کار">۰۳</span>
         </div>
 
         <div class="add-task">
@@ -41,81 +40,19 @@
             type="text"
             placeholder="چه کاری باید انجام شود؟"
             autocomplete="off"
+            aria-describedby="task-error"
           />
           <button class="add-button" type="button" aria-label="افزودن کار">
             +
           </button>
         </div>
 
-        <ul class="task-list" aria-label="کارها">
-          <li class="task-item">
-            <label class="task-label">
-              <input class="task-checkbox" type="checkbox" />
-              <span class="custom-checkbox" aria-hidden="true"></span>
-              <span class="task-text">مرتب کردن میز کار</span>
-            </label>
-            <div class="task-actions">
-              <button class="edit-button" type="button" aria-label="ویرایش مرتب کردن میز کار">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m14 5 5 5M4 20l4.5-1 10.2-10.2a2.1 2.1 0 0 0-3-3L5.5 16 4 20Z" />
-                </svg>
-              </button>
-              <button class="delete-button" type="button" aria-label="حذف مرتب کردن میز کار">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16M10 11v6m4-6v6M5.5 7l1 13h11l1-13M9 7V4h6v3" />
-                </svg>
-              </button>
-            </div>
-          </li>
+        <p class="task-error" id="task-error" role="alert" aria-live="polite" hidden></p>
 
-          <li class="task-item is-completed">
-            <label class="task-label">
-              <input class="task-checkbox" type="checkbox" checked />
-              <span class="custom-checkbox" aria-hidden="true"></span>
-              <span class="task-text">خریدن دفتر یادداشت</span>
-            </label>
-            <div class="task-actions">
-              <button class="edit-button" type="button" aria-label="ویرایش خریدن دفتر یادداشت">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m14 5 5 5M4 20l4.5-1 10.2-10.2a2.1 2.1 0 0 0-3-3L5.5 16 4 20Z" />
-                </svg>
-              </button>
-              <button class="delete-button" type="button" aria-label="حذف خریدن دفتر یادداشت">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16M10 11v6m4-6v6M5.5 7l1 13h11l1-13M9 7V4h6v3" />
-                </svg>
-              </button>
-            </div>
-          </li>
-
-          <li class="task-item">
-            <label class="task-label">
-              <input class="task-checkbox" type="checkbox" />
-              <span class="custom-checkbox" aria-hidden="true"></span>
-              <span class="task-text">خواندن چند صفحه کتاب</span>
-            </label>
-            <div class="task-actions">
-              <button class="edit-button" type="button" aria-label="ویرایش خواندن چند صفحه کتاب">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m14 5 5 5M4 20l4.5-1 10.2-10.2a2.1 2.1 0 0 0-3-3L5.5 16 4 20Z" />
-                </svg>
-              </button>
-              <button class="delete-button" type="button" aria-label="حذف خواندن چند صفحه کتاب">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 7h16M10 11v6m4-6v6M5.5 7l1 13h11l1-13M9 7V4h6v3" />
-                </svg>
-              </button>
-            </div>
-          </li>
-        </ul>
-
-        <footer class="card-footer">
-          <span>۲ کار باقی‌مانده</span>
-          <button class="clear-button" type="button">پاک کردن انجام‌شده‌ها</button>
-        </footer>
+        <ul class="task-list" aria-label="کارها"></ul>
       </section>
-
-      <p class="footer-note">برای شروع، اولین کار امروزت را بنویس.</p>
     </main>
+
+    <script src="js/app.js" defer></script>
   </body>
 </html>
